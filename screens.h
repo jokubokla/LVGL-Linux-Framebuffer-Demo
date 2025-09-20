@@ -15,9 +15,8 @@ typedef struct _objects_t {
     lv_obj_t *btn_red;
     lv_obj_t *btn_red_label;
     lv_obj_t *chk_test;
-    lv_obj_t *table1;
-    lv_obj_t *lbl_mouse;
     lv_obj_t *lbl_debug;
+    lv_obj_t *lbl_header;
 } objects_t;
 
 extern objects_t objects;

@@ -25,15 +25,15 @@ void create_screen_main() {
             // lbl_sample
             lv_obj_t *obj = lv_label_create(parent_obj);
             objects.lbl_sample = obj;
-            lv_obj_set_pos(obj, 77, 197);
+            lv_obj_set_pos(obj, 102, 251);
             lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
-            lv_label_set_text(obj, "Das ist ein Beispieltext V2");
+            lv_label_set_text(obj, "This is a sample Text");
         }
         {
             // btn_blue
             lv_obj_t *obj = lv_button_create(parent_obj);
             objects.btn_blue = obj;
-            lv_obj_set_pos(obj, 28, 41);
+            lv_obj_set_pos(obj, 42, 119);
             lv_obj_set_size(obj, 120, 50);
             lv_obj_set_style_bg_color(obj, lv_color_hex(0xff2137f3), LV_PART_MAIN | LV_STATE_DEFAULT);
             {
@@ -45,7 +45,7 @@ void create_screen_main() {
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
                     lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_label_set_text(obj, "Klick mich");
+                    lv_label_set_text(obj, "Click me");
                 }
             }
         }
@@ -53,7 +53,7 @@ void create_screen_main() {
             // btn_red
             lv_obj_t *obj = lv_button_create(parent_obj);
             objects.btn_red = obj;
-            lv_obj_set_pos(obj, 176, 41);
+            lv_obj_set_pos(obj, 188, 119);
             lv_obj_set_size(obj, 120, 50);
             lv_obj_set_style_bg_color(obj, lv_color_hex(0xfff3213d), LV_PART_MAIN | LV_STATE_DEFAULT);
             {
@@ -65,7 +65,7 @@ void create_screen_main() {
                     lv_obj_set_pos(obj, 0, 0);
                     lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
                     lv_obj_set_style_align(obj, LV_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
-                    lv_label_set_text(obj, "Oder mich");
+                    lv_label_set_text(obj, "Or me");
                 }
             }
         }
@@ -73,46 +73,25 @@ void create_screen_main() {
             // chk_Test
             lv_obj_t *obj = lv_checkbox_create(parent_obj);
             objects.chk_test = obj;
-            lv_obj_set_pos(obj, 109, 131);
+            lv_obj_set_pos(obj, 125, 199);
             lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
             lv_checkbox_set_text(obj, "Checkbox");
-        }
-        {
-            lv_obj_t *obj = lv_buttonmatrix_create(parent_obj);
-            lv_obj_set_pos(obj, 433, 66);
-            lv_obj_set_size(obj, 395, 276);
-            static const char *map[6] = {
-                "Btn",
-                "Btn",
-                "\n",
-                "Btn",
-                "Btn",
-                NULL,
-            };
-            lv_buttonmatrix_set_map(obj, map);
-        }
-        {
-            // table1
-            lv_obj_t *obj = lv_table_create(parent_obj);
-            objects.table1 = obj;
-            lv_obj_set_pos(obj, 433, 400);
-            lv_obj_set_size(obj, 373, 159);
-        }
-        {
-            // lbl_mouse
-            lv_obj_t *obj = lv_label_create(parent_obj);
-            objects.lbl_mouse = obj;
-            lv_obj_set_pos(obj, 156, 342);
-            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
-            lv_label_set_text(obj, "X");
         }
         {
             // lbl_debug
             lv_obj_t *obj = lv_label_create(parent_obj);
             objects.lbl_debug = obj;
-            lv_obj_set_pos(obj, 88, 248);
+            lv_obj_set_pos(obj, 53, 295);
             lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
-            lv_label_set_text(obj, "Das ist ein Debug-Text ");
+            lv_label_set_text(obj, "This is a text to debug the mouse");
+        }
+        {
+            // lbl_header
+            lv_obj_t *obj = lv_label_create(parent_obj);
+            objects.lbl_header = obj;
+            lv_obj_set_pos(obj, 62, 55);
+            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
+            lv_label_set_text(obj, "LVGL-Linux-Framebuffer-Demo");
         }
     }
     
