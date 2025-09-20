@@ -4,7 +4,7 @@
 // cd build
 // cmake ..
 // make
-// sudo ./lvgl_fb_demo
+// sudo ./lvgl_fb_demo (sudo because of /dev/input/mice and /dev/fb0)
 //
 //============================================================================
 
@@ -113,14 +113,15 @@ void init_lvgl_mouse_cursor_char(void)
     lv_indev_set_type(indev, LV_INDEV_TYPE_POINTER);
     lv_indev_set_read_cb(indev, mouse_read_cb);
 
-    lv_label_set_text(objects.lbl_mouse, "+");
-    lv_obj_clear_flag(objects.lbl_mouse, LV_OBJ_FLAG_CLICKABLE);
-    lv_indev_set_cursor(indev, objects.lbl_mouse);
-    lv_obj_move_foreground(objects.lbl_mouse);
+    // Optional: Cursor anzeigen
+    lv_obj_t *cursor = lv_label_create(lv_screen_active());
+    lv_label_set_text(cursor, "+");
+    lv_obj_clear_flag(cursor, LV_OBJ_FLAG_CLICKABLE);
+    lv_indev_set_cursor(indev, cursor);
 
-    lv_obj_set_style_text_color(objects.lbl_mouse, lv_color_hex(0xFF0000), 0);
-    lv_obj_set_style_bg_color(objects.lbl_mouse, lv_color_hex(0x000000), 0);
-    lv_obj_set_style_bg_opa(objects.lbl_mouse, LV_OPA_COVER, 0);
+    lv_obj_set_style_text_color(cursor, lv_color_hex(0xFF0000), 0);
+    lv_obj_set_style_bg_color(cursor, lv_color_hex(0x000000), 0);
+    lv_obj_set_style_bg_opa(cursor, LV_OPA_COVER, 0);
 
 }
 
@@ -180,6 +181,7 @@ int main(void)
     ui_init();
 
     init_lvgl_mouse_cursor_icon();
+    //init_lvgl_mouse_cursor_char();
 
     lv_obj_add_event_cb(objects.btn_blue, button_event_blue, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(objects.btn_red, button_event_red, LV_EVENT_ALL, NULL);
