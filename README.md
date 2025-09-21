@@ -30,25 +30,43 @@ LVGL-Linux-Framebuffer-Demo/
 ```
 ### Setup
 
-After clone or download of this repo, the following steps are necessary:
-
-1. Clone LVGL by executing the following command from the project root
+1. Clone this repository
 ```
+git clone https://github.com/jokubokla/LVGL-Linux-Framebuffer-Demo
+```
+
+2. Clone LVGL by executing the following command from the project root
+```
+cd LVGL-Linux-Framebuffer-Demo
 git clone https://github.com/lvgl/lvgl.git --branch master
 ```
 
-2. Create a build directory and build the project
+3. Create the build directory and build the project
 ```
 mkdir build
 cd build
 cmake ..
 make
+```
+
+4. Execute as sudo because of framebuffer and mouse access
+```
 sudo ./lvgl_fb_demo
 ```
+5. For future builds just execute make in the /build directory
+```
+make
+```
+
+
 
 ### Hints
 
-- The file **main.c** is the only one I edited myself
+- The file **main.c** is the only one I edited myself (together with friendly support from Microsoft Copilot).
+
+- The file **main_dead_simple.c** only shows the UI without mouse or button events. Exchange this file with **main.c** for a first test in case you have trouble.
+
 - The **mouse_cursor_icon.c** was generated online with the [LVGL image converter](https://lvgl.io/tools/imageconverter). Find the **.png** in the /images folder.
+
 - The other files were generated with  [EEZ Studio](https://www.envox.eu/studio/studio-introduction/). Find the **.eez-project** in the /EEZ_STUDIO folder.
 
